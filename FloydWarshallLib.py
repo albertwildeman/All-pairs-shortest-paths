@@ -7,7 +7,6 @@ def floyd_warshall(n_nodes, n_edges, edges):
     node_namebase = edges[:,:2].min()
     edges[:, :2] -= node_namebase
 
-
     # Determine the sum of all edge lengths, to serve as infinity (no path can ever be this long)
     # for later comparisons
     max_length = sum(edges[:,2])
@@ -46,7 +45,5 @@ def floyd_warshall(n_nodes, n_edges, edges):
         neg_cycle_exists = True
     else:
         neg_cycle_exists = False
-
-    print(" check k offsets- +1, -1??")
 
     return shortest_paths, neg_cycle_exists
